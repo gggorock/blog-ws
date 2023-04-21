@@ -1,1 +1,1 @@
-# blog-ws
+# Study for NextJs
