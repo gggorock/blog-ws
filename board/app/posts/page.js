@@ -4,9 +4,7 @@ export default async function Posts(props) {
 
     //get posts data
 
-    const response = await fetch('http://localhost:8080/posts', {
-        method: 'GET',
-    })
+    const response = await fetch('http://localhost:8080/posts')
     const posts = await response.json()
 
 
@@ -14,9 +12,11 @@ export default async function Posts(props) {
         <div>
             {
                 posts.map((post, index) => (
-                    <Link prefetch={false} href={`/posts/${post.id}`} key={index}>
-                        <div>{post.title}</div>
-                    </Link>
+                    <div key={index}>
+                        <Link prefetch={false} href={`/posts/${post.id}`} >
+                         {post.title}
+                        </Link>
+                    </div>
                 ))
             }
         </div>

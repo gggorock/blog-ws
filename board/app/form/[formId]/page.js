@@ -1,5 +1,5 @@
 export default async function PostDetail(props) {
-    const response = await fetch(`http://localhost:8080/posts/${props.params.postId}`,
+    const response = await fetch(`http://localhost:8080/posts/${props.params.formId}`,
         { method: 'GET' });
     const post = await response.json();
 
@@ -9,4 +9,6 @@ export default async function PostDetail(props) {
             <div>{post.content}</div>
         </div>
     )
+
+
 }
