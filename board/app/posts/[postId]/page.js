@@ -1,15 +1,12 @@
-export default async function Post(props) {
-
-    const response = await fetch(`http://localhost:8080/posts/${props.postId}`, {
-        method: 'GET',
-    });
-    const { title, content } = await response.json();
-    console.log(title, content)
+export default async function PostDetail(props) {
+    const response = await fetch(`http://localhost:8080/posts/${props.postId}`,
+        { method: 'GET' });
+    const post = await response.json();
 
     return (
         <div>
-            <div>{title}</div>
-            <div>{content}</div>
+            <h4>post.title</h4>
+            <div>post.content</div>
         </div>
-    )
+        )
 }
